@@ -17,9 +17,6 @@ dnf5 remove -y \
 dnf5 install -y \
 	podman-compose
 
-# Install flatpaks
-flatpak install flathub org.kde.kcalc
-
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
