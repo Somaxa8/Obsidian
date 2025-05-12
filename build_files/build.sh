@@ -9,14 +9,16 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
+# Remove default packages
 dnf5 remove -y \
-	firefox firefox-langpacks
+ 	firefox firefox-langpacks
 
+# Install packages
 dnf5 install -y \
-	podman-compose \
-	fastfetch
+	podman-compose
 
+# Install flatpaks
+flatpak install flathub org.kde.kcalc
 
 # Use a COPR Example:
 #
@@ -28,3 +30,4 @@ dnf5 install -y \
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+
